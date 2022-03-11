@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'data.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class MedicineAdapter extends TypeAdapter<Medicine> {
+  @override
+  final int typeId = 0;
+
+  @override
+  Medicine read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Medicine(
+      name: fields[0] as String,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Medicine obj) {
+    writer
+      ..writeByte(1)
+      ..writeByte(0)
+      ..write(obj.name);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MedicineAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class NoteAdapter extends TypeAdapter<Note> {
+  @override
+  final int typeId = 1;
+
+  @override
+  Note read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return Note(
+      title: fields[0] as String,
+      content: fields[1] as String,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, Note obj) {
+    writer
+      ..writeByte(2)
+      ..writeByte(0)
+      ..write(obj.title)
+      ..writeByte(1)
+      ..write(obj.content);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NoteAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
